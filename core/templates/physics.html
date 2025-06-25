@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Уроки по физике</title>
+</head>
+<body>
+    <h1>Уроки по физике</h1>
+    <ul>
+        <li><a href="#">1. Закон Ньютона</a></li>
+        <li><a href="#">2. Законы термодинамики</a></li>
+        <li><a href="#">3. Квантовая механика</a></li>
+    </ul>
+
+    <video width="640" height="360" controls>
+        <source src="{% static 'videos/lesson1.mp4' %}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <p><a href="{% url 'index' %}">На главную</a></p>
+</body>
+</html>
