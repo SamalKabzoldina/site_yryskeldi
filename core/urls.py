@@ -4,7 +4,8 @@ from .views import CourseViewSet, course_list
 from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 router = DefaultRouter()
@@ -20,4 +21,5 @@ urlpatterns = [
 ]
 
 # Добавим пути от router:
-urlpatterns += router.urls
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
