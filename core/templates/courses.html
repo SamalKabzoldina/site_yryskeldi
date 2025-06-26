@@ -1,0 +1,20 @@
+{% for course in courses %}
+    <li>
+        <strong>{{ course.title }}</strong> — {{ course.description }}<br>
+
+        Видео:
+        <br>
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/{{ course.video_url|slice:'-11:' }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+        <br>
+
+        Язык: {{ course.language }} |
+        Предмет: {{ course.subject }}
+    </li>
+{% empty %}
+    <li>У вас пока нет доступных курсов</li>
+{% endfor %}
